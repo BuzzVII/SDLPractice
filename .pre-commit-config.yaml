@@ -1,0 +1,24 @@
+default_language_version:
+  node: system
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+        exclude: ".*/thirdparty/"
+      - id: trailing-whitespace
+        exclude: ".*/thirdparty/"
+
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.6.2
+    hooks:
+      - id: prettier
+        language_version: 14.13.0
+        exclude: ".*/thirdparty/"
